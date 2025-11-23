@@ -9,23 +9,32 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner input = new Scanner(System.in);
 
-        Product product = new Product();
+
 
         System.out.println("Enter product data");
         
         System.out.print("Name: ");
-        product.name = input.nextLine();
+        String name = input.nextLine();
         System.out.print("Price: ");
-        product.price = input.nextDouble();
+        double price = input.nextDouble();
         System.out.print("Quantity: ");
-        product.quantity = input.nextInt();
+        int quantity = input.nextInt();
+
+        Product product = new Product(name, price, quantity);
+
+        product.setName("computer");
+        System.out.println("Updated name: " + product.getName());
+
+        product.setPrice(900);
+        System.out.println("Updated price: " + product.getPrice());
+
 
         System.out.println("product data: " + product);
         
 
 
         System.out.print("enter the number of products to be addes in stock: ");
-        int quantity = input.nextInt();
+        quantity = input.nextInt();
         product.addProducts(quantity);
         System.out.println("Update data: " + product);
 
@@ -36,7 +45,7 @@ public class Program {
         System.out.println("Updated data: " + product);
 
 
-        
+       
         
         
 

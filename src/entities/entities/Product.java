@@ -3,9 +3,15 @@ package entities;
 
 public class Product {
 
-    public String name;
-    public double price;
-    public int quantity;
+    private String name;
+    private double price;
+    private int quantity;
+
+    public Product(String name, double price, int quantity){
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
 
     public double totalValueInStock(){
         return price * quantity;
@@ -21,5 +27,25 @@ public class Product {
 
     public String toString(){
         return name + ", $ " + price + ", " + quantity + " units, total: $" + totalValueInStock();
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public double getPrice(){
+        return price;
+    }
+
+    public void setPrice(double price){
+        this.price = price;
+    }
+
+    public void getQuantity(){
+        this.quantity = quantity;
     }
 }
